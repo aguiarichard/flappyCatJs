@@ -1,0 +1,1 @@
+Feito com Javascript puro ulitizando o paradigma de orientação a objetos.
