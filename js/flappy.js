@@ -87,7 +87,7 @@ function Passaro(alturaJogo) {
     let voando = false
     
     this.elemento = novoElemento('img', 'passaro')
-    this.elemento.src = './imgs/passaro.png'
+    this.elemento.src = './imgs/gato.png'
     
     this.getY = () => parseInt(this.elemento.style.bottom.split(`px`)[0])
     this.setY = y => this.elemento.style.bottom = `${y}px`
@@ -106,7 +106,7 @@ function Passaro(alturaJogo) {
     
     this.animar = () => {
         const novoY = this.getY() + (voando ? 3 : -2)
-        const alturaMaxima = alturaJogo - this.elemento.clientHeight - 74
+        const alturaMaxima = alturaJogo - this.elemento.clientHeight 
         
         if (novoY <= 0) {
             this.setY(0)
@@ -165,8 +165,9 @@ function FlappyBird() {
     let pontos = 0
     
     this.areaDoJogo = document.querySelector('[wm-flappy]')
-    const altura = 700
-    const largura = 1200
+
+    const altura = this.areaDoJogo.clientHeight
+    const largura = this.areaDoJogo.clientWidth
 
     const progresso = new Progresso()
     const barreiras = new Barreiras(altura, largura, 275, 500, () => {
@@ -193,13 +194,16 @@ function FlappyBird() {
     divBotaoIniciar.firstChild.addEventListener('click', () => {
         divBotaoIniciar.style.display = 'none'
         const bodyBefore = document.styleSheets[1].cssRules[0]
-        bodyBefore.parentStyleSheet.cssRules[3].style.backgroundColor = '#00bfff'
+        bodyBefore.parentStyleSheet.cssRules[3].style.opacity = '0'
 
         this.start()
     })
 
     divBotaoReiniciar.firstChild.addEventListener('click', () => {
         divBotaoReiniciar.style.display = 'none'
+
+        const bodyBefore = document.styleSheets[1].cssRules[0]
+        bodyBefore.parentStyleSheet.cssRules[3].style.opacity = '0'
 
         let quantasBarreirasPassaram = 0
         barreiras.pares.forEach(ParDeBarreiras => {
@@ -236,6 +240,9 @@ function FlappyBird() {
                 clearInterval(temporizadorPassaro)
 
                 divBotaoReiniciar.style.display = 'flex'
+
+                const bodyBefore = document.styleSheets[1].cssRules[0]
+                bodyBefore.parentStyleSheet.cssRules[3].style.opacity = '1'
             }
         }, 6 )
 
