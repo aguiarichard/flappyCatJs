@@ -226,6 +226,7 @@ function FlappyBird() {
         divBotaoIniciar.style.display = 'none'
         const bodyBefore = document.styleSheets[1].cssRules[0]
         bodyBefore.parentStyleSheet.cssRules[3].style.opacity = '0'
+        passaro.elemento.style.opacity = '1'
 
         this.start()
     })
