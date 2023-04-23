@@ -2,6 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @font-face {
@@ -19,7 +26,7 @@
 
 [wm-flappy]::before {
     opacity: 0;
-    
+
     content: '';
     position: absolute;
     height: 100vh;
