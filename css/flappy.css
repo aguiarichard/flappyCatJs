@@ -97,6 +97,14 @@
     width: 130px;
     height: 30px;
     background: linear-gradient(90deg, #ff9bd9, #ff76c1);
+    background: -webkit-linear-gradient(90deg, #ff9bd9, #ff76c1);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(90deg, #ff9bd9, #ff76c1);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(90deg, #ff9bd9, #ff76c1);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(90deg, #ff9bd9, #ff76c1);
+    /* Standard syntax */
     border: solid 2px #000;
 }
 
