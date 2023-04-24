@@ -253,6 +253,7 @@ function FlappyBird() {
         progresso.contador.innerText = 0
         pontos = 0
 
+        passaro.setY(altura / 2)
         this.start()
     })
 
